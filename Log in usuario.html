@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,13 @@
     <title>Lavadero</title>
 </head>
 <body>
-    <section class="form-register">
-        <form action="Formulario reg cliente.html">
-            <h4>Log in Lavadero</h4>
-            <input class="controls" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
-            <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña" required>
-            <button class="botons"><a href="Formulario reg cliente.html"> Acceder</a></button>
-            <p><a href="Formulario reg usuario.html">¿No recuerda su contraseña?</a></p>
-        </form>
-    </section>
+    <form class="form-register" onsubmit="registrarUsuario()">
+        <h4>Log in Lavadero</h4>
+        <input class="controls" type="text" id="usuario" placeholder="Usuario" required>
+        <input class="controls" type="password" id="correo" placeholder="Ingrese su Contraseña" required>
+        <input type="submit" value="Registrar" class="botons" />
+        <p><a href="Formulario reg usuario.html">¿No recuerda su contraseña?</a></p>
+        <script src="scripts/lavaderoScripts.js"></script>
+    </form>
 </body>
 </html>

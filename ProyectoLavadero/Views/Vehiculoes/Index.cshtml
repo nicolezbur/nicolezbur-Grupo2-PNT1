@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProyectoLavadero.Models.Vehiculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-route-idUsuario="@ViewBag.Usuario">Create New</a>
+</p>
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>
+                Matricula
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                Nro Usuario
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuarioNavigation.IdUsuario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Matricula">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Matricula">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Matricula">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
